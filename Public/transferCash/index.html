@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="users-json" href="../users.json">
+    <style>
+        .search-card {
+            width: 400px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: lavender;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px darkgray;
+            margin: 20px;
+            padding: 2rem;
+        }
+        .form {
+            width: 300px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input {
+            margin: 5px;
+            padding: 0.5rem;
+            align-self: flex-end;
+        }
+        .input-container {
+            width: inherit;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content:center;
+        }
+        button {
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-card">
+        <h1>Transfer Cash</h1>
+        <div class="form">
+            <div class="input-container">
+                <lable style="font-family: Arial, Helvetica, sans-serif;" for="id-1-input">Giver Id: </lable>
+                <input class="id-1-input" style="margin: 1rem;" type="number">
+            </div>
+            <div class="input-container">
+                <lable style="font-family: Arial, Helvetica, sans-serif;" for="id-2-input">Reciver Id: </lable>
+                <input class="id-2-input" type="number">    
+            </div>
+            <div class="input-container">
+                <lable style="font-family: Arial, Helvetica, sans-serif;" for="cash-input">Cash: </lable>
+                <input class="cash-input" type="number">
+            </div>
+           
+            <button class="submit-btn">Add</button>
+        </div>
+    </div>
+
+    <script>
+
+        const inputGiverId = document.querySelector(".id-1-input");
+        const inputReciverId = document.querySelector(".id-2-input");
+        const inputCash = document.querySelector(".cash-input");
+        
+
+        const addUserButton = document.querySelector(".submit-btn");
+        addUserButton.addEventListener("click", ()=> {
+            
+            const id1 = inputGiverId.value;
+            const id2 = inputReciverId.value;
+            const cash = inputCash.value;
+
+            location.href = location.href.replace(`transferCash`,`transferCash-Action/${id1}/${id2}/${cash}`);
+        })
+
+    </script>
+</body>
+</html>

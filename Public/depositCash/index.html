@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <link rel="users-json" href="../users.json">
+    <style>
+        .search-card {
+            width: 400px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: lavender;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px darkgray;
+            margin: 20px;
+            padding: 2rem;
+        }
+        .form {
+            width: 300px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input {
+            margin: 5px;
+            padding: 0.5rem;
+            align-self: flex-end;
+        }
+        .input-container {
+            width: inherit;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content:center;
+        }
+        button {
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-card">
+        <h1>Deposit Cash</h1>
+        <div class="form">
+            <div class="input-container">
+                <lable style="font-family: Arial, Helvetica, sans-serif;" for="id-input">Id: </lable>
+                <input class="id-input" style="margin: 1rem;" type="number">
+            </div>
+            <div class="input-container">
+                <lable style="font-family: Arial, Helvetica, sans-serif;" for="cash-input">Cash: </lable>
+                <input class="cash-input" type="number">    
+            </div>
+
+            <button class="submit-btn">Deposit</button>
+        </div>
+    </div>
+
+    <script>
+
+        const inputId = document.querySelector(".id-input");
+        const inputCash = document.querySelector(".cash-input");
+
+        const depositButton = document.querySelector(".submit-btn");
+        depositButton.addEventListener("click", ()=> {
+            
+            const id = inputId.value;
+            const cash = inputCash.value;
+
+            location.href = location.href.replace(`depositCash`,`depositCash-Action/${id}/${cash}`);
+        })
+
+    </script>
+</body>
+</html>

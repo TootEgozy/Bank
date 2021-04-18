@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+
+    <style>
+          .card {
+            width: 400px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: lavender;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px darkgray;
+            margin: 20px;
+            padding: 2rem;
+        }
+        .card h1 {
+            margin: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .card button {
+            width: 8rem;
+            padding: 0.5rem;
+            font-size: 16px;
+            border: 1px solid rgb(85, 85, 85);
+            box-shadow: 2px 2px 3px darkgray;
+            border-radius: 2px;
+            background-color: beige;         
+        }
+        .card button:hover {
+            background-color: white;
+            box-shadow: 0px 0px 5px white;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Actions Menu</h1>
+        <button class="show-users">Show All Users</button>
+        <button class="search-user">Search User By Id</button>
+        <button class="add-user">Add User</button>
+        <button class="deposit-cash">Deposit Cash</button>
+        <button class="update-credit">Update Credit</button>
+        <button class="withdraw-cash">Witdhraw Cash</button>
+        <button class="transfer-cash">Transfer Cash</button>
+    </div>
+
+    <script>
+        const showUsersBtn = document.querySelector(".show-users");
+        showUsersBtn.addEventListener("click", ()=> {
+            window.location='/showUsers';
+        })
+
+        const searchUserBtn = document.querySelector(".search-user");
+        searchUserBtn.addEventListener("click", ()=> {
+            window.location='/showUser';
+        })
+
+        const addUserBtn = document.querySelector(".add-user");
+        addUserBtn.addEventListener("click", ()=> {
+            window.location='/addUser';
+        })
+
+        const depositCashBtn = document.querySelector(".deposit-cash");
+        depositCashBtn.addEventListener("click", ()=> {
+            window.location='/depositCash';
+        })
+
+        const updateCredit = document.querySelector(".update-credit");
+        updateCredit.addEventListener("click", ()=> {
+            window.location='/updateCredit';
+        })
+
+        const withdrawCash = document.querySelector(".withdraw-cash");
+        withdrawCash.addEventListener("click", ()=> {
+            window.location='/withdrawCash';
+        })
+
+        const transferCash = document.querySelector(".transfer-cash");
+        transferCash.addEventListener("click", ()=> {
+            window.location='/transferCash';
+        })
+
+    </script>
+</body>
+</html>
